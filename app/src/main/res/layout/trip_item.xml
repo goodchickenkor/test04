@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:fontFamily="@font/gmarketSansTTFMedium"
+            android:fontFamily="@font/gmarketsansttfmedium"
             android:textColor="#99CCFF"
             android:layout_marginBottom="10dp"
             />
@@ -26,7 +26,7 @@
             android:id="@+id/trip_period"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/gmarketSansTTFMedium"
+            android:fontFamily="@font/gmarketsansttfmedium"
             android:textColor="#000000"
             />
 

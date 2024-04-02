@@ -1,6 +1,7 @@
 package com.example.test04
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -71,7 +72,7 @@ class Step1Activity : AppCompatActivity() {
                 }
             }
         })
-
+        /* 원래 코드
         binding.complete.setOnClickListener {
             val intent = intent
             intent.putExtra("result_trip_name", binding.dummyText.text.toString())
@@ -80,6 +81,16 @@ class Step1Activity : AppCompatActivity() {
             finish()
             true
         }
+        */
+
+        // (좌) 추가 코드
+        binding.complete.setOnClickListener {
+            val intent = Intent(this, Step2Activity::class.java)
+            startActivity(intent)
+            true
+        }
+
+
 
 
     }

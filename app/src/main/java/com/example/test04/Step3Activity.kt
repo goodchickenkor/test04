@@ -5,24 +5,24 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.test04.databinding.ActivityStep2Binding
+import com.example.test04.databinding.ActivityStep3Binding
 
-class Step2Activity : AppCompatActivity() {
+class Step3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityStep2Binding.inflate(layoutInflater)
+        val binding = ActivityStep3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // (좌) 추가 코드
-
         // 버튼 리스트 생성
-        val whoBtnList = listOf(
-            binding.babyBtn,
-            binding.petBtn,
-            binding.patientBtn,
-            binding.kidBtn,
-            binding.seniorBtn,
-            binding.disabledBtn
+        val transportBtnList = listOf(
+            binding.busBtn,
+            binding.bicycleBtn,
+            binding.shipBtn,
+            binding.trainBtn,
+            binding.airplaneBtn,
+            binding.carBtn,
+            binding.motorcycleBtn,
+
         )
 
         // 선택 상태를 토글하는 함수
@@ -32,18 +32,16 @@ class Step2Activity : AppCompatActivity() {
         }
 
         // 버튼들에 대한 클릭 리스너 설정
-        whoBtnList.forEach { button ->
+        transportBtnList.forEach { button ->
             button.setOnClickListener { toggleSelection(it) }
         }
 
         // 페이지 이동
         binding.nextBtn.setOnClickListener {
-            val intent = Intent(this, Step3Activity::class.java)
+            val intent = Intent(this, Step4Activity::class.java)
             startActivity(intent)
             true
         }
-        // (좌) 추가 코드 끝
-
 
     }
 }
