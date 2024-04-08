@@ -14,10 +14,28 @@
         tools:targetApi="31">
         <activity
             android:name=".Step1Activity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+        </activity>
+        <activity
+            android:name=".Step2Activity"
+            android:exported="false"
+            android:parentActivityName=".Step1Activity"
+            >
+        </activity>
+        <activity
+            android:name=".Step3Activity"
+            android:exported="false"
+            android:parentActivityName=".Step2Activity"
+            >
+        </activity>
+        <activity
+            android:name=".CheckListActivity"
+            android:exported="false"
+            >
         </activity>
         <activity
             android:name=".MainActivity"
@@ -32,12 +50,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-        <!-- (좌)추가 코드 시작 -->
-        <activity android:name=".Step2Activity"/>
-        <activity android:name=".Step3Activity"/>
-        <activity android:name=".Step4Activity"/>
-        <!-- (좌)추가 코드 끝 -->
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

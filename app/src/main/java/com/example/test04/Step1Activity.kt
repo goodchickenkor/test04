@@ -1,6 +1,5 @@
 package com.example.test04
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -28,6 +27,10 @@ class Step1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityStep1Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val toolbar = binding.toolbarStep1
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val dummyText = binding.dummyText
 
@@ -84,13 +87,11 @@ class Step1Activity : AppCompatActivity() {
         */
 
         // (좌) 추가 코드
-        binding.complete.setOnClickListener {
+        binding.step1Next.setOnClickListener {
             val intent = Intent(this, Step2Activity::class.java)
             startActivity(intent)
             true
         }
-
-
 
 
     }

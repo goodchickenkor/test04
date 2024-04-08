@@ -24,12 +24,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-    //    for (i in 1..10){
-    //            val tripmodel = TripModel(trip_name = "서울", trip_period = "2024")
-    //             this.tripModelList.add(tripmodel)
-    //    }
-
-
         //어댑터 인스턴스 생성
         myRecyclerAdapter = MyRecyclerAdapter()
         myRecyclerAdapter.submitList(this.tripModelList)

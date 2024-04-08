@@ -1,138 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_step3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/step_level3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3/3"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginEnd="16dp"/>
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="45dp"
         android:fontFamily="@font/gmarketsansttfmedium"
-        android:text="무엇을 타고"
+        android:text="어떤 여행을"
         android:textColor="#99CCFF"
-        android:textSize="32sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:fontFamily="@font/gmarketsansttfmedium"
-        android:text="여행 하시나요?"
+        android:text="떠나시나요?"
         android:textColor="#000000"
-        android:textSize="32sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:textSize="32sp" />
 
-    <!-- 버스 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/busBtn"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="50dp"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bus_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:layout_weight="1" >
 
-    <!-- 자전거 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bicycleBtn"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bicycle_btn"
-        app:layout_constraintStart_toStartOf="@+id/busBtn"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        <!-- 버튼 리니어 레이아웃 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <!-- 배 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/shipBtn"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/ship_btn"
-        app:layout_constraintStart_toStartOf="@+id/bicycleBtn"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            <!-- 첫번째 줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="50dp">
 
-    <!-- 기차 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/trainBtn"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/train_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/busBtn" />
+                <!-- 캠핑 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/campingBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/camping_btn" />
 
-    <!-- 비행기 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/airplaneBtn"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/airplane_btn"
-        app:layout_constraintStart_toStartOf="@id/trainBtn"
-        app:layout_constraintTop_toBottomOf="@+id/bicycleBtn" />
+                <!-- 수영 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/swimmingBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/swimming_btn" />
 
-    <!-- 자동차 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/carBtn"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/car_btn"
-        app:layout_constraintStart_toStartOf="@+id/airplaneBtn"
-        app:layout_constraintTop_toBottomOf="@+id/shipBtn" />
+                <!-- 글램핑 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/glampingBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/glamping_btn" />
+            </LinearLayout>
+            <!-- 두번째 줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp">
 
-    <!-- 오토바이 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/motorcycleBtn"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/motorcycle_btn"
-        app:layout_constraintStart_toStartOf="@id/trainBtn"
-        app:layout_constraintTop_toBottomOf="@+id/airplaneBtn" />
+                <!-- 등산 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/mountainBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/mountain_btn" />
 
-    <!-- 건너뛰기 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/skipBtn"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/skip_btn"
-        android:fontFamily="@font/gmarketsansttfmedium"
-        android:text="건너뛰기"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+                <!-- 스키 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/skiBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/ski_btn" />
 
-    <!-- 확인 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextBtn"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/next_btn"
-        android:fontFamily="@font/gmarketsansttfmedium"
-        android:text="확 인"
-        android:textColor="#2B82DA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/skipBtn" />
+                <!-- 낚시 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/fishingBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/fishing_btn" />
+            </LinearLayout>
+            <!-- 세번째 줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- 골프 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/golfBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/golf_btn" />
+
+                <!-- 공연 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/concertBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/concert_btn" />
+
+                <!-- 사진 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cameraBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/camera_btn" />
+            </LinearLayout>
+            <!-- 네번째 줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp">
+
+                <!-- 트래킹 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/trekkingBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/trekking_btn" />
+
+                <!-- 계곡 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/waterfallBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/waterfall_btn" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/alcoholBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/alcohol_btn"/>
+
+                 />
+            </LinearLayout>
+            <!-- 다섯번째 줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp">
+
+
+                <!-- 헬스 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/fitnessBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/fitness_btn" />
+
+                <!-- 업무 버튼 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/businessBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/business_btn" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 하단 버튼 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/skipBtn_step3"
+            android:layout_width="145dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:background="@drawable/skip_btn"
+            android:fontFamily="@font/gmarketsansttfmedium"
+            android:text="건너뛰기" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextBtn_step3"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:background="@drawable/next_btn"
+            android:fontFamily="@font/gmarketsansttfmedium"
+            android:text="확 인"  />
+
+    </LinearLayout>
+</LinearLayout>
