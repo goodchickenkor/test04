@@ -30,13 +30,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="언제, 어디로"
         android:textColor="#99CCFF"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar_step1" />
 
     <TextView
         android:id="@+id/textView4"
@@ -51,69 +51,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <TextView
-        android:id="@+id/select_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:padding="10dp"
-        android:text="여행 일정"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_show_picker">
-
-    </TextView>
-
-    <Button
-        android:id="@+id/bt_show_picker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:backgroundTint="#4B89DC"
-        android:padding="8dp"
-        android:text="여행 일정을 선택해주세요."
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchFragment"></Button>
-
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
-        android:layout_width="match_parent"
+        android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="74dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         tools:layout="@layout/places_autocomplete_fragment" />
 
     <TextView
         android:id="@+id/dummyText"
-        android:layout_width="wrap_content"
+        android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:background="@drawable/border_bottom"
+        android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchFragment" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_show_picker"
+        android:layout_width="296dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/border_bottom"
+        style="?android:attr/borderlessButtonStyle"
+        android:padding="8dp"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:text="일정 선택"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dummyText" />
 
     <Button
         android:id="@+id/step1Next"
         android:layout_width="296dp"
-        android:layout_height="73dp"
+        android:layout_height="60dp"
         android:layout_marginTop="52dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#4B89DC"
         android:text="다 음"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select_date" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

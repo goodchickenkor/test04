@@ -21,7 +21,6 @@ import java.util.*
 class Step1Activity : AppCompatActivity() {
 
     private lateinit var btShowDateRangePicker: Button
-    private lateinit var selectDate: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,26 +33,27 @@ class Step1Activity : AppCompatActivity() {
 
         val dummyText = binding.dummyText
 
+        // 여기부터 날짜 선택 기능
         btShowDateRangePicker = binding.btShowPicker
-        selectDate = binding.selectDate
 
         btShowDateRangePicker.setOnClickListener {
             val picker = MaterialDatePicker.Builder.dateRangePicker()
                 .setTheme(R.style.ThemeMaterialCaledar)
-                .setTitleText("Select Date Range Tutorial")
+                .setTitleText("Please Select Date")
                 .setSelection(Pair(null, null))
                 .build()
 
             picker.show(this.supportFragmentManager, "TAG")
 
             picker.addOnPositiveButtonClickListener {
-                selectDate.setText(convertTimeToDate(it.first) + "-" + convertTimeToDate(it.second))
+                btShowDateRangePicker.text = "${convertTimeToDate(it.first)}   ~  ${convertTimeToDate(it.second)}"
             }
-
             picker.addOnNegativeButtonClickListener{
                 picker.dismiss()
             }
         }
+        // 날짜 선택 기능 끝
+
         if (!Places.isInitialized()){
             Places.initialize(applicationContext,"AIzaSyDiKfKDPaOVPmMixJcHTvtFm7ce_GhhFoQ")
         }
@@ -98,7 +98,7 @@ class Step1Activity : AppCompatActivity() {
     private fun convertTimeToDate(time: Long): String {
         val utc = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
         utc.timeInMillis = time
-        val format = SimpleDateFormat("dd/MM/yyy", Locale.getDefault())
+        val format = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
         return format.format(utc.time)
     }
 
