@@ -1,7 +1,8 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -50,11 +51,16 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    def room_version
+
     // 구글 위치 검색
     implementation 'com.google.android.libraries.places:places:3.1.0'
 
     //카드 뷰
     dependencies {
         implementation "androidx.cardview:cardview:1.0.0"
+        implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+        implementation("androidx.room:room-ktx:2.6.1")
+        kapt("androidx.room:room-compiler:2.6.1")
     }
 }
